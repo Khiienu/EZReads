@@ -49,12 +49,12 @@ for(let i=0;i<list.length;i++){
         newList.push({gameId: (i+1), systemId: `19`});
     if(list[i][0].includes("PSP"))
         newList.push({gameId: (i+1), systemId: `20`});
-}
+};
 
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-      return queryInterface.bulkInsert('Games-by-systems', newList, {});
+      return queryInterface.bulkInsert('GamesBySystems', newList, {});
   },
 
   down: (queryInterface, Sequelize) => {
