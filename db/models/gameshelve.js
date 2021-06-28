@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   GameShelve.associate = function (models) {
     GameShelve.belongsTo(models.Game, { foreignKey: "gameId" });
-    GameShelve.belongsTo(model.User, { foreignKey: "userId" });
+    GameShelve.belongsTo(model.User, { foreignKey: "usersId" });
   };
   return GameShelve;
 };
