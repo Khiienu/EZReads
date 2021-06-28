@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Game.associate = function (models) {
-    Game.belongsTo(models.gameShelve, { foreignKey: "gameId" });
+    Game.belongsTo(models.GameShelve, { foreignKey: "gameId" });
     const columnMapping = {
       through: "GamesBySystems",
       otherKey: "systemId",
