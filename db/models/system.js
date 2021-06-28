@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "systemId",
     };
     System.belongsToMany(models.Game, columnMapping);
-    System.hasMany(models.Game, { foreignKey: "gameId" });
   };
   return System;
 };
