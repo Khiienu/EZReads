@@ -51,11 +51,10 @@ for(let i=0;i<list.length;i++){
         newList.push({gameId: (i+1), systemId: `20`});
 }
 
-console.log(newList);
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-      return queryInterface.bulkInsert('People', newList, {});
+      return queryInterface.bulkInsert('Games-by-systems', newList, {});
   },
 
   down: (queryInterface, Sequelize) => {
