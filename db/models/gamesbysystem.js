@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   GamesBySystem.associate = function (models) {
-    // associations can be defined here
+    GamesBySystem.hasMany(models.System, { foreignKey: "systemId" });
   };
   return GamesBySystem;
 };
