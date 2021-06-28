@@ -1,9 +1,16 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-
+const { csrfProtection, asyncHandler } = require("./utils");
+const db = require("../db/models");
+// const { Game } = db;
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'a/A Express Skeleton Home' });
-});
+
+router.get(
+  "/",
+  asyncHandler(async (req, res, next) => {
+    // let games = await Game.findAll({ limit: 1 });
+    res.render("index", { title: "Home" });
+  })
+);
 
 module.exports = router;
