@@ -9,6 +9,13 @@ module.exports = (sequelize, DataTypes) => {
   );
   System.associate = function (models) {
     System.belongsTo(models.GamesBySystem, { foreignKey: "systemId" });
+    const columnMapping = {
+      through: "GamesBySystems",
+      otherKey: "gameId",
+      foreignKey: "systemId",
+    };
+    System.belongsToMany(models.Game, columnMapping);
+    System.hasMany(models.Game, { foreignKey: "gameId" });
   };
   return System;
 };

@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
   );
   Game.associate = function (models) {
     Game.belongsTo(models.gameShelve, { foreignKey: "gameId" });
+    const columnMapping = {
+      through: "GamesBySystems",
+      otherKey: "systemId",
+      foreignKey: "gameId",
+    };
+    Game.belongsToMany(models.System, columnMapping);
   };
   return Game;
 };
