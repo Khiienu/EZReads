@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { asyncHandler } = require("./utils");
 const db = require("../db/models");
-const { User, Game, Review } = db;
+const {Game} = db;
 
 
 router.get(
@@ -18,7 +18,7 @@ router.get(
         if(searchProperties.where.genre || searchProperties.where.system){ //confirm whether ANY search properties have been set
             const searchResults = await Game.findAll(searchProperties);
             if (searchResults)
-                res.render('search', searchResults);
+                res.render('search', {searchResults});
             else
                 res.json("no games found for search criteria");
         }

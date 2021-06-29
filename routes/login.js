@@ -33,7 +33,7 @@ router.get(
   
       if (!validatorErrors.isEmpty()) {
         const errors = validatorErrors.array().map((error) => error.msg);
-        res.render("login", errors, { csrfToken: req.csrfToken() });
+        res.render("login", {errors, csrfToken: req.csrfToken() });
       }
   
       try {
@@ -45,7 +45,7 @@ router.get(
             id: user.id,
           };
           
-          res.redirect("/profile");
+          res.redirect(`/profile/${user.id}`);
         } else {
           throw new Error();
         }
