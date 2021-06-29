@@ -37,7 +37,7 @@ router.get(
       }
   
       try {
-        let user = await User.findOne({ email });
+        let user = await User.findOne({ where:{ email: email}});
   
         if (await bcrypt.compare(hashedPassword, user.hashedPassword)) {
           req.session.auth = { //to delete a session do "delete req.session.auth"
@@ -45,7 +45,7 @@ router.get(
             id: user.id,
           };
           
-          res.redirect("/");
+          res.redirect("/profile");
         } else {
           throw new Error();
         }
