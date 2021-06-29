@@ -8,14 +8,14 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     let game = await Game.findByPk(req.params.id, { include: Review });
-    res.render("game", game);
+    res.render("game", {game});
   })
 );
 
 router.post(
   "/:id",
   asyncHandler(async (req, res) => { //either include logged in userID in the req or we need to grab it from the session here?
-    
+
     try{
       await Review.create({ gameId: req.params.id, userId: req.body.userId, content: req.body.content, score: req.body.score });
     }

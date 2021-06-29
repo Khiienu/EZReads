@@ -1,0 +1,7 @@
+.game-card {
+    width: 200px;
+    height: 400px;
+    display: inline-flex;
+    background-color: grey;
+    margin: 5px;
+}
