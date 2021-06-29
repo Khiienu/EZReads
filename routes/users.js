@@ -130,17 +130,21 @@ router.get(
 router.get(
   "/:id/:shelf",
   asyncHandler(async (req, res) => {
-    const userGames = await db.GameShelve.findAll({
-      where: {
-        usersId: req.params.id,
-        status: req.params.shelf,
-      },
-      include: Game,
-    });
-    res.json(userGames);
-    const user = await db.User.findByPk(req.params.id);
-
-    // res.render("profile", userGames, user);
+    try {
+      const userGames = await db.GameShelve.findAll({
+        where: {
+          usersId: req.params.id,
+          status: req.params.shelf,
+        },
+        include: Game,
+      });
+      const reviews = await db.Review.findAll({
+        where: { userId: req.params.id },
+      });
+      res.render("gameShelf", userGames, reviews);
+    } catch (err) {
+      throw new Error("Invalid userId or gameshelf");
+    }
   })
 );
 
