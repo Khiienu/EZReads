@@ -9,7 +9,9 @@ router.get(
   "/",
   asyncHandler(async (req, res, next) => {
     // let games = await Game.findAll({ limit: 1 });
-    res.render("index", { title: "Home" });
+    let Systems = await db.System.findAll()
+
+    res.render("home", { title: "Home", Systems});
   })
 );
 
