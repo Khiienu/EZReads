@@ -17,7 +17,10 @@
     width: 98%;
     background-color: #878683;
     position: absolute;
-  
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
 }
 .wrapper{
     width: 100vw;
@@ -26,5 +29,5 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
