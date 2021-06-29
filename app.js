@@ -41,6 +41,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/games", gamesRouter);
 app.use("/systems", systemsRouter);
+app.use("/login", indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

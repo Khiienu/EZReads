@@ -1,0 +1,42 @@
+@keyframes rotate {
+    0% {
+        transfrom: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.background{
+    height: -150%;
+    width: -150%;
+    /* border-radius: 150%; */
+    background: conic-gradient(red, blue,green, red);
+    animation-name: rotate;
+    /* background-size: cover; */
+    /* position: absolute;  */
+    animation-iteration-count: infinite;
+    animation-duration: 100s;
+    display: grid;
+    grid-row: span 6/ span 6;
+    grid-column: span 6/ span 6;
+}
+.form-container{
+    height: 98%;
+    width: 98%;
+    background-color: #878683;
+    position: absolute;
+    display: grid;
+    grid-row: 3/3;
+    grid-column: 3/3;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* background-clip: border-box; */
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
