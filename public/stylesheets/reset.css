@@ -25,3 +25,18 @@ body, header, nav {
 h1 {
   font-size: 2rem;
 }
+
+#navbar{
+  display:flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: rgb(34,193,195);
+}
+
+.navbar_item{
+  padding: 10px;
+  border: 1px solid black;
+}
