@@ -15,7 +15,7 @@ router.get(
 router.post(
   "/:id",
   asyncHandler(async (req, res) => { 
-    
+
     try{
       await Review.create({ gameId: req.params.id, userId: req.session.auth.id, content: req.body.content, score: req.body.score });
     }
