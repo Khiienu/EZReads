@@ -10,12 +10,12 @@
 .background{
     height: 100%;
     width: 100%;
-    background: conic-gradient(red, blue,green, red);
+    background: conic-gradient(green, red, blue, green);
 }
 .form-container{
     height: 98%;
     width: 98%;
-    background-color: #878683;
+    background-color: #23272a;
     position: absolute;
     display: flex;
     justify-content: center;
