@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { asyncHandler } = require("./utils");
 const db = require("../db/models");
-const { User, Game, Review } = db;
+const {Game} = db;
 
 
 router.get(
