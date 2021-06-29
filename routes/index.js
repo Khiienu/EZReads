@@ -8,7 +8,7 @@ const { Game } = db;
 router.get(
   "/",
   asyncHandler(async (req, res, next) => {
-    let games = await Game.findAll();
+    let games = await Game.findAll({limit:21});
 
     res.render("index", { title: "Home" });
   })
