@@ -50,7 +50,7 @@ router.post(
         if (validatorErrors.isEmpty()) {
         await user.save();
         //res.json(user);
-        res.redirect("/users/login");
+        res.redirect("/login");
         } else {
         const errors = validatorErrors.array().map((error) => error.msg);
         // res.json(errors);

@@ -1,0 +1,33 @@
+@keyframes rotate {
+    0% {
+        transfrom: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(red, blue,green, red);
+}
+.form-container{
+    height: 98%;
+    width: 98%;
+    background-color: #878683;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -48,6 +48,7 @@ app.use("/login", loginRouter);
 app.use("/profile", profileRouter);
 app.use("/search", searchRouter);
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -64,6 +65,6 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(8081, () => console.log("listening"));
+
 
 module.exports = app;
