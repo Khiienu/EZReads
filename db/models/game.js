@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "gameId",
     };
     Game.belongsToMany(models.System, columnMapping);
+    Game.hasMany(models.Review, { foreignKey: "gameId" });
   };
   return Game;
 };
