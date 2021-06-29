@@ -18,7 +18,7 @@ router.get(
         if(searchProperties.where.genre || searchProperties.where.system){ //confirm whether ANY search properties have been set
             const searchResults = await Game.findAll(searchProperties);
             if (searchResults)
-                res.render('search', searchResults);
+                res.render('search', {searchResults});
             else
                 res.json("no games found for search criteria");
         }

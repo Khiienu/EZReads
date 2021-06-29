@@ -22,6 +22,7 @@
     /* align-content: center; */
     align-items: center;
 }
+
 .wrapper{
     width: 100vw;
     height: 100vh;
@@ -30,4 +31,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form-group{
+    margin: 20px;
+}
+.form-group label{
+    margin: 20px;
 }
