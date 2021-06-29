@@ -8,14 +8,8 @@ append head
 
 block content
   h1= title
-  p Welcome to your Project Skeleton
-
-  nav
-    a(href=("/"))
-      img(src="/images/Mudzurilla.JPG")
-    select(name="Genre") 
-      option select a genre
-    select(name="System")
-      each system in Systems
-        option(value=system.id name="system")= system.system  
-
+  each game in games
+    a(href=`/games/${game.id}`)
+        div(class="game-card")
+            img(src=game.picture)
+            h4= game.gameTitle
