@@ -49,7 +49,7 @@ router.post(
 
         if (validatorErrors.isEmpty()) {
             await user.save();
-            res.redirect("/users/login");
+            res.redirect("/login");
         } else {
             const errors = validatorErrors.array().map((error) => error.msg);
             res.render("signup", { user, errors, csrfToken: req.csrfToken() });

@@ -8,13 +8,14 @@ block content
     div(class="wrapper")
         div(class="background")
         div(class="form-container")
-            +validationErrorSummary(errors)
-            form(action='/login' method='post')
-                input(type='hidden' name='_csrf' value=csrfToken)
-                +field('Email Address', 'email', email)
-                +field('Password', 'hashedPassword', null, 'password')
-                div(class='py-4')
-                button(type='submit' class='btn btn-primary') Login
-                a(href='/' class='btn btn-warning ml-2') Cancel
-            div
-                p: a(href='/signup') Don't have an account?
+            div(class="form-form")
+                +validationErrorSummary(errors)
+                form(action='/login' method='post')
+                    input(type='hidden' name='_csrf' value=csrfToken)
+                    +field('Email Address', 'email', email)
+                    +field('Password', 'hashedPassword', null, 'password')
+                    div(class='py-4')
+                    button(type='submit' class='btn btn-primary') Login
+                    a(href='/' class='btn btn-warning ml-2') Cancel
+                div
+                    p: a(href='/signup') Don't have an account?

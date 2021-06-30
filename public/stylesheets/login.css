@@ -22,6 +22,9 @@
     /* align-content: center; */
     align-items: center;
 }
+.form-form{
+    background-color: blueviolet;
+}
 
 .wrapper{
     width: 100vw;
