@@ -7,6 +7,8 @@
     }
 }
 .class-wrapper{
+    height: 98%;
+    width: 98%;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -35,14 +37,12 @@
 }
 
 .form-form{
-        height: 90%;
-        width: 90%;
-        background-color: purple;
-        display: flex;
-        align-content: center;
+    min-height: 100vh;
+    background-color: purple;
+    display: flex;
         justify-content: center;
-        flex-direction: column;
-        flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
 }
 
 #form-writes{
