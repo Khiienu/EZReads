@@ -1,13 +1,25 @@
 .title {
-    box-sizing: border-box;
-    margin: 10px;
-    display: flex;
-    color: white;
-    background-color: black;
-    justify-content: center;
+  box-sizing: border-box;
+  margin: 10px;
+  display: flex;
+  color: white;
+  background-color: black;
+  justify-content: center;
 }
 
 .pic {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+.review {
+  /* border: 1px solid black; */
+  width: 30%;
+  margin-left: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 10px;
+}
+
+#userReview {
+  border-bottom: 1px solid black;
+  padding-left: 10px;
 }
