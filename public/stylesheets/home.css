@@ -4,4 +4,18 @@
     display: inline-flex;
     background-color: grey;
     margin: 5px;
+    position: relative;
+}
+
+.cover {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
