@@ -1,3 +1,7 @@
+body {
+  background-color: #555555;
+  color: white;
+}
 .title {
   box-sizing: border-box;
   margin: 10px;
@@ -8,11 +12,11 @@
 }
 
 .pic {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+  margin-left: 10px;
 }
 .review {
-  /* border: 1px solid black; */
+  display: block;
   width: 30%;
   margin-left: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -20,6 +24,60 @@
 }
 
 #userReview {
-  border-bottom: 1px solid black;
+  background-color: gray;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-left: 10px;
+}
+
+#genreAndDescript {
+  display: inline-block;
+  margin-left: 20px;
+  /* align-items: center; */
+}
+
+.description {
+  border-radius: 5px;
+  display: block;
+  /* float: right; */
+  border: 1px solid black;
+  width: 300px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.genre {
+  border-radius: 5px;
+  display: block;
+  border: 1px solid black;
+  width: 200px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  /* float: right; */
+}
+
+#num {
+  display: inline-block;
+  width: 40px;
+}
+
+#addShelf {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#writeRev {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#userRevs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+textarea {
+  border-radius: 5px;
 }
