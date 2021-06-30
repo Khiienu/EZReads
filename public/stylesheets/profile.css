@@ -6,6 +6,10 @@
     display: flex;
 }
 
+body {
+    background-color: grey;
+}
+
 #pic {
     position: relative;
 }
@@ -13,4 +17,32 @@
 .prof-name {
     position: relative;
 
+}
+
+.playing-shelf {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px;
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.played-shelf {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px;
+    float: right;
+    display: flex;
+    flex-direction: row;
+}
+
+.want-to-play-shelf {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px;
+    float: right;
 }
