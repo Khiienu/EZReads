@@ -19,7 +19,11 @@ body {
 .game-card:hover {
     background-color: black;
     transition: background-color .5s;
-    box-shadow: 2px 2px rgb(30, 49, 49);
+    box-shadow: 2px 2px 4px rgb(30, 49, 49);
+}
+
+.game-card:active {
+    box-shadow: -2px -2px rgb(30, 49, 49);
 }
 
 .cover {

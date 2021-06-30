@@ -1,9 +1,54 @@
 .prof-pic-div {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
     background-color: rgb(126, 211, 115);
     position: relative;
     display: flex;
+    grid-area: 1 / 1 / 1 / 2;
+}
+
+.color-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.colorful {
+    background: conic-gradient(red, orange, green, blue, purple, red);
+    width: 8000px;
+    height: 10000px;
+    top: -4500px;
+    left: -3500px;
+    animation-name: rotate;
+    background-size: cover;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wrapper {
+    display: grid;
+    margin: 10px;
+    border-radius: 5%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: grey;
+    position: relative;
+    grid-row-start: 1;
+    grid-row-end: 4;
 }
 
 #pic {
@@ -12,5 +57,82 @@
 
 .prof-name {
     position: relative;
+    margin: 5px;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgb(199, 230, 236);
+    color: rgb(3, 7, 6);
+    text-align: center;
+}
 
+.buttons {
+    display: flex;
+    grid-area: 2 / 2 / 2 / 5;
+    margin: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.shelf-btn {
+    width: 30%;
+    height: 150px;
+    border-radius: 5%;
+    margin: 5px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgb(155, 192, 199);
+    color: rgb(3, 7, 6);
+}
+
+.shelf-btn:hover {
+    background-color: lightpink;
+    transition: background-color 1s;
+}
+
+.playing-shelf {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px;
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.played-shelf {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px;
+    float: right;
+    display: flex;
+    flex-direction: row;
+}
+
+.want-to-play-shelf {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px;
+    float: right;
+}
+
+.gameshelves-title {
+    position: relative;
+    grid-area: 1 / 2 / 1 / 5;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(3, 7, 6);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }

@@ -27,7 +27,6 @@ router.get(
     });
 
     const user = await db.User.findByPk(req.params.id);
-
     res.render("profile", {userGames, user});
   })
 );
@@ -44,8 +43,9 @@ router.get(
         include: Game,
       });
       const reviews = await db.Review.findAll({
-        where: { userId: req.params.id },
+        where: { usersId: req.params.id },
       });
+      console.log(userGames);
       res.render("gameShelf", {userGames, reviews});
     } catch (err) {
       throw new Error("Invalid userId or gameshelf");
@@ -56,7 +56,7 @@ router.get(
 router.post( //add game to game shelf for logged in user: this POST is activated by clicking on the "add" button on a game page
   "/:id",
   asyncHandler(async (req, res) => { //req should contain gameId and shelf to add to in req.body.gameId and req.body.status
-    
+
     try{
       const test = await db.GameShelve.findOne({where: { //test to see if game already is on a shelf for this user
         usersId: req.params.id,
