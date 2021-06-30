@@ -38,14 +38,13 @@
 }
 
 .form-form{
-        height: 90%;
-        width: 90%;
+        min-height: 50vh;
+        min-width: 50vw;
         background-color: #FFFFD8;
         display: flex;
         align-content: center;
         justify-content: center;
         flex-direction: column;
-        flex-wrap: wrap;
         border-top: 18px solid green;
         border-bottom: 18px solid purple;
         border-left: 18px solid blue;
