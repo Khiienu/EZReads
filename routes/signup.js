@@ -32,10 +32,11 @@ router.get(
       res.render("signup", { csrfToken: req.csrfToken() });
     })
 );
-  
+
 router.post(
     "/",
     userValidation,
+    csrfProtection,
     asyncHandler(async (req, res) => {
         let { fullName, email, hashedPassword } = req.body;
 
