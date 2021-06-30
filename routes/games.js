@@ -8,16 +8,16 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     let game = await Game.findByPk(req.params.id, { include: Review });
-    res.render("game", game);
+    res.render("game", {game});
   })
 );
 
 router.post(
   "/:id",
-  asyncHandler(async (req, res) => { //either include logged in userID in the req or we need to grab it from the session here?
-    
+  asyncHandler(async (req, res) => { 
+
     try{
-      await Review.create({ gameId: req.params.id, userId: req.body.userId, content: req.body.content, score: req.body.score });
+      await Review.create({ gameId: req.params.id, userId: req.session.auth.id, content: req.body.content, score: req.body.score });
     }
     catch(e){
       res.json("something went wrong") //god knows why this would error but here's some handling

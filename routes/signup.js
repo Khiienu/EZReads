@@ -32,10 +32,11 @@ router.get(
       res.render("signup", { csrfToken: req.csrfToken() });
     })
 );
-  
+
 router.post(
     "/",
     userValidation,
+    csrfProtection,
     asyncHandler(async (req, res) => {
         let { fullName, email, hashedPassword } = req.body;
 
@@ -48,13 +49,11 @@ router.post(
         // const user = User.create({ fullName, email, hashedPassword });
 
         if (validatorErrors.isEmpty()) {
-        await user.save();
-        //res.json(user);
-        res.redirect("/login");
+            await user.save();
+            res.redirect("/login");
         } else {
-        const errors = validatorErrors.array().map((error) => error.msg);
-        // res.json(errors);
-        res.render("signup", user, errors, { csrfToken: req.csrfToken() });
+            const errors = validatorErrors.array().map((error) => error.msg);
+            res.render("signup", { user, errors, csrfToken: req.csrfToken() });
         }
     })
 );

@@ -1,0 +1,16 @@
+.prof-pic-div {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(126, 211, 115);
+    position: relative;
+    display: flex;
+}
+
+#pic {
+    position: relative;
+}
+
+.prof-name {
+    position: relative;
+
+}

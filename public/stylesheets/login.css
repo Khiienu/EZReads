@@ -22,6 +22,21 @@
     /* align-content: center; */
     align-items: center;
 }
+.form-form{
+        background-color: purple;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+.form-title {
+	text-shadow: 3px 4px 2px #a74b4b6b;
+	font-size: xxx-large;
+	text-align: center;
+	opacity: 0.7;
+}
+
 .wrapper{
     width: 100vw;
     height: 100vh;
@@ -30,4 +45,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form-group{
+    margin: 20px;
+}
+.form-group label{
+    margin: 20px;
 }

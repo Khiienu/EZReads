@@ -7,15 +7,9 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
-
-  nav
-    a(href=("/"))
-      img(src="/images/Mudzurilla.JPG")
-    select(name="Genre") 
-      option select a genre
-    select(name="System")
-      each system in Systems
-        option(value=system.id name="system")= system.system  
-
+  h1(id="title")= title
+  each game in games
+    a(href=`/games/${game.id}`)
+        div(class="game-card")
+            img(src=`images/${game.gameTitle}.JPG` class="cover")
+            h4(class="title")= game.gameTitle
