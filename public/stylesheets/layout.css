@@ -40,6 +40,12 @@ h1 {
 
 #logo{
   margin-right: 20px;
+  max-width: 100px;
+  max-height: 100px; */
+  /* object-fit: fill;
+  /* height: 45px;
+  width: auto;
+  padding-top: 5px; */
 }
 
 .navbar_item:not(.search_options){
