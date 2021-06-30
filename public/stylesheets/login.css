@@ -23,7 +23,18 @@
     align-items: center;
 }
 .form-form{
-    background-color: blueviolet;
+        background-color: purple;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+.form-title {
+	text-shadow: 3px 4px 2px #a74b4b6b;
+	font-size: xxx-large;
+	text-align: center;
+	opacity: 0.7;
 }
 
 .wrapper{
