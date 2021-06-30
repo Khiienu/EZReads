@@ -38,10 +38,15 @@ h1 {
   background: linear-gradient(0deg, rgba(21,121,122,1) 0%, rgba(29,53,212,1) 100%);
 }
 
+#navbar-left{
+  display: flex;
+  align-items: center;
+}
+
 #logo{
   margin-right: 20px;
   max-width: 100px;
-  max-height: 100px; */
+  max-height: 100px;
   /* object-fit: fill;
   /* height: 45px;
   width: auto;
