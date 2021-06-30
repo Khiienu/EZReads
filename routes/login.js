@@ -54,5 +54,13 @@ router.get(
       }
     })
   );
+
+  router.all("/demo", (req, res) =>{
+    req.session.auth = { //to delete a session do "delete req.session.auth"
+      email: "demo@demo.com",
+      id: 1,
+    };
+    res.redirect('/profile')
+  })
   
   module.exports = router;
