@@ -8,15 +8,28 @@ block content
     div(class="wrapper")
         div(class="background")
         div(class="form-container")
-            +validationErrorSummary(errors)
-            form(action='/signup' method="post")
-                input(type='hidden' name='_csrf' value=csrfToken)
-                +field('Full Name', 'fullName')
-                +field('Email', 'email')
-                +field('Password', 'hashedPassword', '' ,'password')
-                +field('Confirm Password', 'confirmPassword', '', 'password')
-                div(class='py-4')
-                button(type='submit' class='btn btn-primary') Register
-                a(href='/' class='btn btn-warning ml-2') Cancel
-            div
-                p: a(href='/login') Already have an account?
+            div(class="class-wrapper")
+                div(class="form-back")
+                div(class="form-form")
+                    +validationErrorSummary(errors)
+                    p.form-title Ready to play ? 
+                    form(action='/signup' id="form-writes" method="post")
+                        input(type='hidden' name='_csrf' value=csrfToken)
+                        //- +field('Full Name', 'fullName')
+                        //- +field('Email', 'email')
+                        //- +field('Password', 'hashedPassword', '' ,'password')
+                        //- +field('Confirm Password', 'confirmPassword', '', 'password')
+                        label(for="fullName") Full Name
+                        input(type="text" id="fullName")
+                        p
+                        label(for="email") Email
+                        input(type="text" id="email")
+                        p
+                        label(for="password") Password
+                        input(type="password" id="hashedPassword")
+                        p
+                        label(for="confirmPassword") Confirm Password 
+                        input(type="password" id="confirmPassword")
+                        p
+                        button(type='submit' class='btn btn-primary') Register
+                        p: a(href='/login') Already have an account?
