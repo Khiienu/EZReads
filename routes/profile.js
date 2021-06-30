@@ -43,8 +43,9 @@ router.get(
         include: Game,
       });
       const reviews = await db.Review.findAll({
-        where: { userId: req.params.id },
+        where: { usersId: req.params.id },
       });
+      console.log(userGames);
       res.render("gameShelf", {userGames, reviews});
     } catch (err) {
       throw new Error("Invalid userId or gameshelf");
