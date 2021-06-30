@@ -14,3 +14,10 @@ block content
         p= game.primaryGenre
     div(class="description")
         p= game.description
+    label Reviews
+    div(class='review')
+     each review in game.Reviews
+        div(id='userReview')
+          a(href=`/profile/${review.usersId}`)= users[review.usersId]
+          p= review.content
+          p= '⭐'.repeat(review.score)
