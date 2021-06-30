@@ -8,16 +8,22 @@ block content
     div(class="wrapper")
         div(class="background")
         div(class="form-container")
-                div
-                div(class="form-form")
-                    +validationErrorSummary(errors)
-                    p.form-title Welcome back, Gamer
-                    form(action='/login' method='post')
-                        input(type='hidden' name='_csrf' value=csrfToken)
-                        +field('Email Address', 'email', email)
-                        +field('Password', 'hashedPassword', null, 'password')
-                        div(class='py-4')
-                        button(type='submit' class='btn btn-primary') Login
-                        a(href='/' class='btn btn-warning ml-2') Cancel
-                    div
-                        p: a(href='/signup') Don't have an account?
+            div(class="class-wrapper")
+                div(class="form-back")
+                    div(class="form-form")
+                        +validationErrorSummary(errors)
+                        p.form-title Welcome back, Gamer
+                        form(action='/login' id="form-writes" method='post')
+                            input(type='hidden' name='_csrf' value=csrfToken)
+                            label(for="email") Email Address 
+                            input(type="text" id="email") 
+                            p
+                            label(for="password") Password 
+                            input(type="password" id="password")
+                            p
+                            button(type='submit' class='btn btn-primary') Login
+                            p
+                            a(href='/signup') Don't have an account?
+                            p
+                            a(href='/login/demo') Login as demo user
+                            p
