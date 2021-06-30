@@ -6,3 +6,8 @@
     background-color: black;
     justify-content: center;
 }
+
+.pic {
+    display: flex;
+    justify-content: center;
+}

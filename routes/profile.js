@@ -10,7 +10,10 @@ const { User, Game, Review } = db;
 router.get( //TODO: redirect to logged in user's profile if there is a user logged in
   "/",
   asyncHandler(async (req, res, next) => {
-    res.render("login", {});
+    if(req.session.auth)
+      res.redirect(`/profile/${req.session.auth.id}`);
+    else
+      res.redirect("/login");
   })
 );
 
@@ -20,12 +23,12 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const userGames = await db.GameShelve.findAll({
-      where: { userId: req.params.id },
+      where: { usersId: req.params.id },
     });
 
     const user = await db.User.findByPk(req.params.id);
 
-    res.render("profile", userGames, user);
+    res.render("profile", {userGames, user});
   })
 );
 
@@ -43,7 +46,7 @@ router.get(
       const reviews = await db.Review.findAll({
         where: { userId: req.params.id },
       });
-      res.render("gameShelf", userGames, reviews);
+      res.render("gameShelf", {userGames, reviews});
     } catch (err) {
       throw new Error("Invalid userId or gameshelf");
     }

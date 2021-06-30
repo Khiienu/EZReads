@@ -11,5 +11,5 @@ block content
   each game in games
     a(href=`/games/${game.id}`)
         div(class="game-card")
-            img(src=game.picture)
-            h4= game.gameTitle
+            img(src=`images/${game.gameTitle}.jpg` class="cover")
+            h4(class="title")= game.gameTitle

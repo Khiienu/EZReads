@@ -9,7 +9,7 @@ router.get(
   asyncHandler(async (req, res) => {
     let system = await System.findByPk(req.params.id, { include: Game });
     // res.json(system);
-    res.render("system", system);
+    res.render("system", {system});
   })
 );
 
