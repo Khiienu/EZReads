@@ -86,12 +86,6 @@ router.post(
   })
 );
 
-<<<<<<< HEAD
-router.delete("/logout", (req, res) => {
-  delete req.session.auth
-  res.redirect("/profile/logout")
-})
-=======
 const logoutUser = (req, res) => {
   delete req.session.auth;
 };
@@ -103,6 +97,5 @@ router.post("/logout", (req, res, next) => {
     else return res.redirect("/");
   });
 });
->>>>>>> 4b4bf1adacc420a054c911b5cba1e7016c9d07f2
 
 module.exports = router;
