@@ -18,7 +18,7 @@
 }
 
 .colorful {
-    background: conic-gradient(red, orange, green, blue, purple, red);
+    background: conic-gradient(blue,red,green,blue);
     width: 8000px;
     height: 10000px;
     top: -4500px;
@@ -35,7 +35,7 @@
         transform: rotate(0);
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(1080deg);
     }
 }
 

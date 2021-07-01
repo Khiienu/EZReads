@@ -16,10 +16,10 @@ block content
                         form(action='/login' id="form-writes" method='post')
                             input(type='hidden' name='_csrf' value=csrfToken)
                             label(for="email") Email Address 
-                            input(type="text" id="email") 
+                            input(type="text" name='email' id="email") 
                             p
                             label(for="password") Password 
-                            input(type="password" id="password")
+                            input(type="password" name='hashedPassword' id="password")
                             p
                             button(type='submit' class='btn btn-primary') Login
                             p
