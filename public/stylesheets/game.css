@@ -154,6 +154,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-items: center;
+  /* flex-direction: row; */
   /* background-color: #ffffd8; */
   /* color: black; */
 }

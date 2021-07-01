@@ -33,7 +33,7 @@ block content
                   option(value='have_played' ) Have Played
                   option(value='currently_playing' ) Playing
               input(type='hidden' value=game.id  name='gameId')
-              button(type='submit') Add
+              button(type='submit' style='float:right') Add
         div(id="writeRev" class='shelfAndRev')
          label(for="reviewForm") Write a review: 
           form(action=`/games/${game.id}` method="post"  id="reviewForm" )
@@ -41,7 +41,7 @@ block content
              input(type="number" id='score' name='score' max='10' min='1' required)
              label(for="score") /10 
              textarea(id="content" name='content' cols="50" rows="2")
-             button(type='submit') Post
+             button(type='submit' style="width:100%") Post
     if !currentUser
      a(href='/login' id='notLogged') Login or Signup to add to a shelf or write a review
     h1(id='reviewsHeader') User Reviews
