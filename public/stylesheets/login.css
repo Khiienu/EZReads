@@ -3,7 +3,7 @@
         transfrom: rotate(0);
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(1080deg);
     }
 }
 .class-wrapper{
@@ -14,9 +14,16 @@
     align-items: center;
 }
 .background{
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(green, red, blue, green);
+    background: conic-gradient(blue,red,green,blue);
+    width: 8000px;
+    height: 10000px;
+    top: -4500px;
+    left: -3500px;
+    animation-name: rotate;
+    background-size: cover;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    position: absolute;
 }
 .form-container{
     height: 98%;

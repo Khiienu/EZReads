@@ -27,6 +27,7 @@ router.get(
     });
 
     const user = await db.User.findByPk(req.params.id);
+    // console.log(res.locals)
     res.render("profile", {userGames, user});
   })
 );
@@ -54,7 +55,7 @@ router.get(
 );
 
 router.post( //add game to game shelf for logged in user: this POST is activated by clicking on the "add" button on a game page
-  "/:id",
+  "/:id(\\d+)",
   asyncHandler(async (req, res) => { //req should contain gameId and shelf to add to in req.body.gameId and req.body.status
 
     try{
@@ -81,9 +82,12 @@ const logoutUser = (req, res) => {
   delete req.session.auth;
 };
 
-router.post("/logout", (req, res) => {
+router.post("/logout", (req, res, next) => {
   logoutUser(req, res);
-  res.redirect("/")
+  req.session.save(error => {
+    if(error) next(error)
+    else return res.redirect("/")
+  })
 })
 
 
