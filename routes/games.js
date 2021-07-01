@@ -27,7 +27,7 @@ router.post(
     try {
       await Review.create({
         gameId: req.params.id,
-        userId: req.session.auth.id,
+        usersId: req.session.auth.id,
         content: req.body.content,
         score: req.body.score,
       });
@@ -35,7 +35,7 @@ router.post(
       res.json("something went wrong"); //god knows why this would error but here's some handling
     }
 
-    res.render(`game/${req.params.id}`);
+    res.redirect(`/games/${req.params.id}`);
   })
 );
 

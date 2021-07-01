@@ -17,21 +17,21 @@ block content
           p= game.description 
     div(id="addShelf")
      label Add to shelf
-     form(id='')
+     form(action=`/game/${game.id}` method="post"  id="form-writes" )
        div
        select
            option(value='want_play') Want to play 
            option Have Played
            option Playing
-       button Add
+       button(type='submit') Add
     div(id="writeRev")
      label Write a review: 
-     form(id='reviewForm')
+     form(action=`/games/${game.id}` method="post"  id="reviewForm" )
       div
-       input(type="number" id='num' name='num' max='10' min='1')
-       label(for="num") /10 
-       textarea(name="", cols="50", rows="5")
-       button Post
+       input(type="number" id='score' name='score' max='10' min='1')
+       label(for="score") /10 
+       textarea(id="content" name='content' cols="50" rows="5")
+       button(type='submit') Post
     div(id="userRevs")
       label(id='space') Reviews:
       div(class='review')
@@ -40,3 +40,4 @@ block content
             a(href=`/profile/${review.usersId}`)= users[review.usersId]
             p= review.content
             p= '⭐'.repeat(review.score)
+    script(src='/javascripts/index.js')
