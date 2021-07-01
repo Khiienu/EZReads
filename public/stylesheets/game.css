@@ -2,13 +2,31 @@ body {
   background-color: #555555;
   color: white;
 }
+
+.background {
+  background: conic-gradient(blue, red, green, blue);
+  width: 8000px;
+  height: 10000px;
+  top: -4500px;
+  left: -3500px;
+  animation-name: rotate;
+  background-size: cover;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
 .title {
+  width: 50%;
+  border-radius: 5px;
   box-sizing: border-box;
   margin: 10px;
   display: flex;
   color: white;
-  background-color: black;
+  background-color: rgb(0, 91, 130);
   justify-content: center;
+  text-decoration: underline overline;
+  padding: 10px;
 }
 
 .pic {
@@ -17,7 +35,7 @@ body {
 }
 .review {
   display: block;
-  width: 30%;
+  width: 50%;
   margin-left: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 10px;
@@ -33,26 +51,31 @@ body {
 #genreAndDescript {
   display: inline-block;
   margin-left: 20px;
+  width: 50%;
   /* align-items: center; */
 }
 
 .description {
   border-radius: 5px;
   display: block;
+  width: 100%;
+  padding: 10px;
   /* float: right; */
   border: 1px solid black;
-  width: 300px;
+  /* width: 800px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.genre {
+#genreAndPlatform {
   border-radius: 5px;
-  display: block;
+  display: flex;
+  justify-content: space-evenly;
   border: 1px solid black;
-  width: 200px;
+  width: auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
   /* float: right; */
 }
 
@@ -62,6 +85,8 @@ body {
 }
 
 #addShelf {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -74,10 +99,62 @@ body {
 #userRevs {
   margin-top: 20px;
   display: flex;
+  width: 100%;
   justify-content: center;
   padding-bottom: 40px;
 }
 
 textarea {
   border-radius: 5px;
+}
+
+#gameWrapper {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 800px; */
+  /* justify-content: center; */
+  /* align-content: center; */
+  align-items: center;
+  /* align-self: center; */
+}
+
+#loggedInOptions {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#reviewsHeader {
+  width: 50%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  color: white;
+  background-color: rgb(2, 121, 60);
+  justify-content: center;
+  /* text-decoration: underline overline; */
+  padding: 10px;
+}
+
+#notLogged {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(220, 40, 40);
+  font-weight: bold;
+}
+
+.shelfAndRev {
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  /* flex-direction: row; */
+  /* background-color: #ffffd8; */
+  /* color: black; */
 }
