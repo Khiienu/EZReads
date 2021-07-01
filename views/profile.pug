@@ -17,18 +17,21 @@ block content
             h2(class="gameshelves-title") Gameshelves
             h3(class="prof-name")= user.fullName
             div(class='buttons')
-                button(class="shelf-btn" id="current" onclick=`window.location='/profile/${user.id}/currently_playing'`) Currently Playing
-                button(class="shelf-btn" id="played" onclick=`window.location='/profile/${user.id}/have_played'`) Have Played
-                button(class="shelf-btn" id="want" onclick=`window.location='/profile/${user.id}/want_play'`) Want to Play
-        //- div(class="playing-shelf")
-        //-     each game in userGames
-        //-         if game.status = 'currently_playing'
-        //-             img(class='shelved-game')
-        //- div(class="played-shelf")
-        //-     each game in userGames
-        //-         if game.status = 'have_played'
-        //-             img(class='shelved-game')
-        //- div(class="want-to-play-shelf")
-        //-     each game in userGames
-        //-         if game.status = 'want_play'
-        //-             img(class='shelved-game')
+                div(class="playing-shelf")
+                    each game in frontGameArray
+                        if game.status === 'currently_playing'
+                            div(class="shelfPreview")
+                                button(class="shelf-btn" id="current" onclick=`window.location='/profile/${user.id}/currently_playing'`) Currently Playing
+                                img(src=`/images/${game.Game.picture}` class="previewImg")
+                div(class="played-shelf")
+                    each game in frontGameArray
+                        if game.status === 'have_played'
+                            div(class="shelfPreview")
+                                button(class="shelf-btn" id="played" onclick=`window.location='/profile/${user.id}/have_played'`) Have Played
+                                img(src=`/images/${game.Game.picture}` class="previewImg")
+                div(class="want-to-play-shelf")
+                    each game in frontGameArray
+                        if game.status === 'want_play'
+                            div(class="shelfPreview")
+                                button(class="shelf-btn" id="want" onclick=`window.location='/profile/${user.id}/want_play'`) Want to Play
+                                img(src=`/images/${game.Game.picture}` class="previewImg")
