@@ -8,6 +8,7 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     let game = await Game.findByPk(req.params.id, { include: Review });
+    let currentUser = req.session.auth.id;
     // res.json(game);
     let users = {};
     for (review of game.Reviews) {
@@ -17,7 +18,7 @@ router.get(
         users[review.usersId] = userName;
       }
     }
-    res.render("game", { game, users });
+    res.render("game", { game, users, currentUser });
   })
 );
 
@@ -27,15 +28,24 @@ router.post(
     try {
       await Review.create({
         gameId: req.params.id,
-        userId: req.session.auth.id,
+        usersId: req.session.auth.id,
         content: req.body.content,
         score: req.body.score,
       });
     } catch (e) {
-      res.json("something went wrong"); //god knows why this would error but here's some handling
+      res.redirect("/login"); //god knows why this would error but here's some handling
     }
 
-    res.render(`game/${req.params.id}`);
+    res.redirect(`/games/${req.params.id}`);
+  })
+);
+
+router.post(
+  "/delete/:id",
+  asyncHandler(async (req, res) => {
+    let review = await Review.findByPk(req.body.reviewId);
+    await review.destroy();
+    res.redirect(`/games/${req.params.id}`);
   })
 );
 
