@@ -18,10 +18,33 @@ router.get(
   asyncHandler(async (req, res) => {
     const userGames = await db.GameShelve.findAll({
       where: { usersId: req.params.id },
+      include: Game,
     });
+    let frontGameArray = [];
+    for(let i = 0; i < userGames.length; i++) {
+      if(userGames[i].status === 'have_played'){
+        frontGameArray.push(userGames[i])
+        break
+      }
+    }
+    for(let i = 0; i < userGames.length; i++) {
+      if(userGames[i].status === 'want_play'){
+        frontGameArray.push(userGames[i])
+        break
+      }
+    }
+    for(let i = 0; i < userGames.length; i++) {
+      if(userGames[i].status === 'currently_playing'){
+        frontGameArray.push(userGames[i])
+        break
+      }
+    }
+    console.log(frontGameArray)
+
 
     const user = await db.User.findByPk(req.params.id);
-    res.render("profile", { userGames, user });
+    res.render("profile", { userGames, user, frontGameArray });
+    // res.json({frontGameArray})
   })
 );
 
