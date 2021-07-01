@@ -47,10 +47,13 @@ router.get(
           
           res.redirect(`/profile/${user.id}`);
         } else {
+          //console.log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
           throw new Error();
         }
       } catch (err) {
-        return new Error("Incorrect Username or Password");
+        //console.log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+        res.render("login", {errors: ["Incorrect Username or Password"], csrfToken: req.csrfToken() });
+        //throw new Error("Incorrect Username or Password");
       }
     })
   );
