@@ -8,8 +8,9 @@ append head
 
 block content
   img(id='title_img' src="/images/EZReads_Logo.png" class="center")
-  each game in games
-    a(href=`/games/${game.id}`)
-        div(class="game-card")
-            img(src=`images/${game.picture}` class="cover")
+  div(class="game-wrapper")
+    each game in games
+      a(href=`/games/${game.id}`)
+          div(class="game-card")
+              img(src=`images/${game.picture}` class="cover")
 
