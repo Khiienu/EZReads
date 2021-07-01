@@ -19,10 +19,10 @@ block content
      label Add to shelf
      form(action=`/profile/${currentUser}` method="post"  id="shelfForm" )
        div
-         select
-             option(value='want_play' name='status') Want to play 
-             option(value='have_played' name='status') Have Played
-             option(value='currently_playing' name='status') Playing
+         select(name='status')
+             option(value='want_play' ) Want to play 
+             option(value='have_played' ) Have Played
+             option(value='currently_playing' ) Playing
          input(type='hidden' value=game.id  name='gameId')
          button(type='submit') Add
     div(id="writeRev")
@@ -41,4 +41,8 @@ block content
             a(href=`/profile/${review.usersId}`)= users[review.usersId]
             p= review.content
             p= '⭐'.repeat(review.score)
+            if review.usersId === currentUser
+             form(action=`/games/delete/${game.id}` method="post" id='deleteRev')
+               input(type='hidden' value=review.id name='reviewId')
+               button(type='submit') Delete
     script(src='/javascripts/index.js')

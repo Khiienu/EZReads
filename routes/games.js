@@ -40,4 +40,13 @@ router.post(
   })
 );
 
+router.post(
+  "/delete/:id",
+  asyncHandler(async (req, res) => {
+    let review = await Review.findByPk(req.body.reviewId);
+    await review.destroy();
+    res.redirect(`/games/${req.params.id}`);
+  })
+);
+
 module.exports = router;

@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { asyncHandler } = require("./utils");
 const db = require("../db/models");
-const { User, Game, Review } = db;
+const { User, Game, Review, GameShelve } = db;
 
 router.get(
   //TODO: redirect to logged in user's profile if there is a user logged in
@@ -52,8 +52,6 @@ router.post(
   "/:id",
   asyncHandler(async (req, res) => {
     //req should contain gameId and shelf to add to in req.body.gameId and req.body.status
-    let { gameId, status } = req.body;
-    console.log(gameId, status);
     try {
       const test = await db.GameShelve.findOne({
         where: {
@@ -75,9 +73,7 @@ router.post(
         throw new Error("game already exists on a shelf for this user");
       }
     } catch (e) {
-      throw new Error(
-        "malformed req: req should contain gameId and shelf to add to in req.body.gameId and req.body.status"
-      );
+      throw new Error(e);
     }
   })
 );
