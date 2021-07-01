@@ -34,6 +34,7 @@
     justify-content: center;
     /* align-content: center; */
     align-items: center;
+    flex-direction: column;
 }
 .form-back{
     display: flex;
@@ -87,6 +88,16 @@
     /* align-content: center;  */
 }
 
+.alert {
+    background-color: #00ffd0;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 5%;
+    margin-bottom: 5px;
+    #ffffd8
+}
 .form-group{
     margin: 20px;
 }
