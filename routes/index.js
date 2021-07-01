@@ -2,14 +2,15 @@ var express = require("express");
 var router = express.Router();
 const { csrfProtection, asyncHandler } = require("./utils");
 const db = require("../db/models");
-const { Game } = db;
+const { Game, sequelize } = db;
+
 /* GET home page. */
 
 router.get(
   "/",
   asyncHandler(async (req, res, next) => {
 
-    let games = await Game.findAll({ limit: 21 });
+    let games = await Game.findAll({ order: sequelize.random(), limit: 21 })
     let Systems = await db.System.findAll()
 
 
