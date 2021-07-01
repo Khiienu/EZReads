@@ -81,6 +81,11 @@
     justify-content: center;
     align-items: center;
 }
+.alert{
+    display: flex;
+    justify-self: center;
+    /* align-content: center;  */
+}
 
 .form-group{
     margin: 20px;
