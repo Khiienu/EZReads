@@ -6,6 +6,9 @@
     position: relative;
     display: flex;
     grid-area: 1 / 1 / 1 / 2;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-left: 30px;
 }
 
 .color-wrapper {
@@ -57,7 +60,7 @@
 
 .prof-name {
     position: relative;
-    margin: 5px;
+    margin-left: 30px;
     border: 1px solid black;
     width: 150px;
     height: 30px;
@@ -81,7 +84,7 @@
 }
 
 .shelf-btn {
-    width: 100%;
+    width: 95%;
     height: 150px;
     border-radius: 5%;
     margin: 5px;
@@ -98,32 +101,35 @@
 }
 
 .playing-shelf {
-    border: 2px solid black;
+    border: 2px solid blue;
     width: 50%;
     height: 100%;
     margin: 5px;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    align-items: center;
 }
 
 .played-shelf {
-    border: 2px solid black;
+    border: 2px solid red;
     width: 50%;
     height: 100%;
     margin: 5px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 2px;
 }
 
 .want-to-play-shelf {
-    border: 2px solid black;
+    border: 2px solid green;
     width: 50%;
     height: 100%;
     margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2px;
 }
 
 .gameshelves-title {
@@ -136,11 +142,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    padding: 2px;
+    text-shadow: white 1px 1px;
 }
 
 .previewImg {
-    width: 100%;
-    height: 200px;
+    width: 95%;
+    height: 50%;
     display: inline-flex;
     border-radius: 2%;
     background-color: grey;
