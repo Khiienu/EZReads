@@ -9,15 +9,34 @@ block content
     div(class="title")
         h1= game.gameTitle
     div(class="pic")
-        img(src=`../images/${game.gameTitle}.jpg`)
-    div(class="genre")
-        p= game.primaryGenre
-    div(class="description")
-        p= game.description
-    label Reviews
-    div(class='review')
-     each review in game.Reviews
-        div(id='userReview')
-          a(href=`/profile/${review.usersId}`)= users[review.usersId]
-          p= review.content
-          p= '⭐'.repeat(review.score)
+        img(src=`../images/${game.picture}`)
+    div(id='genreAndDescript')
+      div(class="genre")
+          p= `Genre: ${game.primaryGenre}`
+      div(class="description")
+          p= game.description 
+    div(id="addShelf")
+     label Add to shelf
+     form(id='')
+       div
+       select
+           option(value='want_play') Want to play 
+           option Have Played
+           option Playing
+       button Add
+    div(id="writeRev")
+     label Write a review: 
+     form(id='reviewForm')
+      div
+       input(type="number" id='num' name='num' max='10' min='1')
+       label(for="num") /10 
+       textarea(name="", cols="50", rows="5")
+       button Post
+    div(id="userRevs")
+      label(id='space') Reviews:
+      div(class='review')
+       each review in game.Reviews
+          div(id='userReview')
+            a(href=`/profile/${review.usersId}`)= users[review.usersId]
+            p= review.content
+            p= '⭐'.repeat(review.score)
