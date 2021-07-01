@@ -31,11 +31,12 @@ body {
     object-fit: contain;
 }
 
-#title {
-    display: flex;
-    position: relative;
-    color: whitesmoke;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid black;
+#title_img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25vw;
+  height: 25vh;
+  padding: 1em;
+  border-bottom: 5px solid #00B7FF; 
 }
