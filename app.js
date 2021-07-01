@@ -13,6 +13,7 @@ const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 const profileRouter = require("./routes/profile");
 const searchRouter = require("./routes/search");
+const {restoreUser} = require("./auth")
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
 
+
 app.use(
   session({
     secret: "superSecret",
@@ -39,7 +41,7 @@ app.use(
 
 // create Session table if it doesn't already exist
 store.sync();
-
+app.use(restoreUser)
 app.use("/", indexRouter);
 app.use("/games", gamesRouter);
 app.use("/systems", systemsRouter);

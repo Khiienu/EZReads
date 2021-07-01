@@ -73,5 +73,9 @@ html
             option(value="Other") Other
           button(id='search_button' type='submit') Go
       div(id='navbar-right')
-        a(id='login_signup' class='navbar_item' href='/login') Login / Sign Up
+        if locals.authenticated
+          form(action="/profile/logout" method="post")
+            button(id="logout-button" class="navbar_item" value="logout" type="submit") logout
+        else
+          a(id='login_signup' class='navbar_item' href='/login') Login / Sign Up
     block content
