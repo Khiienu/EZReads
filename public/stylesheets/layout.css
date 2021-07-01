@@ -88,3 +88,12 @@ h1 {
 #search_button{
   margin-left: 5px;
 }
+
+.navbar_center {
+  display: inline-block;
+  min-width: 400px;
+}
+.search_option {
+  display: flex;
+  flex-direction: row;
+}

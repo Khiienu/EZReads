@@ -7,9 +7,10 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1(id="title")= title
-  each game in games
-    a(href=`/games/${game.id}`)
-        div(class="game-card")
-            img(src=`images/${game.picture}` class="cover")
-            //- h4(class="title")= game.gameTitle
+  img(id='title_img' src="/images/EZReads_Logo.png" class="center")
+  div(class="game-wrapper")
+    each game in games
+      a(href=`/games/${game.id}`)
+          div(class="game-card")
+              img(src=`images/${game.picture}` class="cover")
+

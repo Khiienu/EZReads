@@ -10,7 +10,7 @@ router.get(
   "/",
   asyncHandler(async (req, res, next) => {
 
-    let games = await Game.findAll({ order: sequelize.random(), limit: 21 })
+    let games = await Game.findAll({ order: sequelize.random(), limit: 36 })
     let Systems = await db.System.findAll()
 
 

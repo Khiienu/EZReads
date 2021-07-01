@@ -11,7 +11,7 @@ html
         a(id='home_button' class='navbar_item' href='/') Home
         a(id='profile_button' class='navbar_item' href='/profile') Profile
       div(class='navbar_center')
-        form(action='/search' method="post" class='search_options navbar_item' id="form-writes" )
+        form(action='/search' method="post" class='search_options navbar_item')
           span Search:  
           select(name='system') System
               option(value='') --System--
@@ -73,6 +73,14 @@ html
             option(value="Other") Other
           button(id='search_button' type='submit') Go
       div(id='navbar-right')
+<<<<<<< HEAD
         a(id='login_signup' class='navbar_item' href='/login') Login / Sign Up
         a(id='logout' class="navbar_item" href='/' ) Logout
+=======
+        if locals.authenticated
+          form(action="/profile/logout" method="post")
+            button(id="logout-button" class="navbar_item" value="logout" type="submit") logout
+        else
+          a(id='login_signup' class='navbar_item' href='/login') Login / Sign Up
+>>>>>>> 4b4bf1adacc420a054c911b5cba1e7016c9d07f2
     block content

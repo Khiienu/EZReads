@@ -17,21 +17,22 @@ block content
           p= game.description 
     div(id="addShelf")
      label Add to shelf
-     form(id='')
+     form(action=`/profile/${currentUser}` method="post"  id="shelfForm" )
        div
-       select
-           option(value='want_play') Want to play 
-           option Have Played
-           option Playing
-       button Add
+         select(name='status')
+             option(value='want_play' ) Want to play 
+             option(value='have_played' ) Have Played
+             option(value='currently_playing' ) Playing
+         input(type='hidden' value=game.id  name='gameId')
+         button(type='submit') Add
     div(id="writeRev")
      label Write a review: 
-     form(id='reviewForm')
+     form(action=`/games/${game.id}` method="post"  id="reviewForm" )
       div
-       input(type="number" id='num' name='num' max='10' min='1')
-       label(for="num") /10 
-       textarea(name="", cols="50", rows="5")
-       button Post
+       input(type="number" id='score' name='score' max='10' min='1' required)
+       label(for="score") /10 
+       textarea(id="content" name='content' cols="50" rows="2")
+       button(type='submit') Post
     div(id="userRevs")
       label(id='space') Reviews:
       div(class='review')
@@ -40,3 +41,8 @@ block content
             a(href=`/profile/${review.usersId}`)= users[review.usersId]
             p= review.content
             p= '⭐'.repeat(review.score)
+            if review.usersId === currentUser
+             form(action=`/games/delete/${game.id}` method="post" id='deleteRev')
+               input(type='hidden' value=review.id name='reviewId')
+               button(type='submit') Delete
+    script(src='/javascripts/index.js')
