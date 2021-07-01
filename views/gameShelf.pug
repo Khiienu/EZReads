@@ -7,4 +7,9 @@ append head
   script(src="/javascripts/shelves.js" type="module" defer)
 
 block content
-    h1 Gameshelf Page
+    h1(id="title")= shelfName
+    div(class="game-wrapper")
+        each shelf in userGames
+            a(href=`/games/${shelf.Game.id}`)
+                div(class="game-card")
+                    img(src=`http://localhost:8083/images/${shelf.Game.picture}` class="cover")

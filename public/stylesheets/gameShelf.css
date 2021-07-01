@@ -1,1 +1,50 @@
+body {
+    background-color: #555555;
+}
 
+
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    width: 400px;
+    height: 200px;
+    display: inline-flex;
+    border-radius: 2%;
+    background-color: grey;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    border-right: 1px solid black;
+}
+
+.game-card:hover {
+    background-color: black;
+    transition: background-color .5s;
+    box-shadow: 2px 2px 4px rgb(30, 49, 49);
+}
+
+.game-card:active {
+    box-shadow: -2px -2px rgb(30, 49, 49);
+}
+
+.cover {
+    position: relative;
+    object-fit: contain;
+}
+
+#title {
+    display: flex;
+    position: relative;
+    color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
