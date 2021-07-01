@@ -8,7 +8,10 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     let game = await Game.findByPk(req.params.id, { include: Review });
-    let currentUser = req.session.auth.id;
+    let currentUser;
+    if (req.session.auth) {
+      currentUser = req.session.auth.id;
+    }
     // res.json(game);
     let users = {};
     for (review of game.Reviews) {
