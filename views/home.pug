@@ -8,8 +8,9 @@ append head
 
 block content
   h1(id="title")= title
-  each game in games
-    a(href=`/games/${game.id}`)
-        div(class="game-card")
-            img(src=`images/${game.picture}` class="cover")
-            //- h4(class="title")= game.gameTitle
+  div(class="game-wrapper")
+    each game in games
+        a(href=`/games/${game.id}`)
+            div(class="game-card")
+                img(src=`images/${game.picture}` class="cover")
+                //- h4(class="title")= game.gameTitle
