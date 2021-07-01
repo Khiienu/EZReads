@@ -42,11 +42,18 @@ router.get(
         },
         include: Game,
       });
+      let shelfName = 'Invalid Shelf Name';
+      if(req.params.shelf === 'want_play') {
+          shelfName = 'Want to Play';
+      } else if(req.params.shelf === 'currently_playing') {
+          shelfName = 'Currently Playing';
+      } else if (req.params.shelf === 'have_played') {
+          shelfName = 'Have Played';
+      }
       const reviews = await db.Review.findAll({
         where: { usersId: req.params.id },
       });
-      console.log(userGames);
-      res.render("gameShelf", {userGames, reviews});
+      res.render("gameShelf", {userGames, reviews, shelfName});
     } catch (err) {
       throw new Error("Invalid userId or gameshelf");
     }

@@ -5,7 +5,7 @@ append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/profile.css")
   //- add page specific js
-  script(src="/javascripts/profile.js" type="module" defer)
+//-   script(src="/javascripts/profile.js" type="module" defer)
 
 
 block content
@@ -17,9 +17,9 @@ block content
             h2(class="gameshelves-title") Gameshelves
             h3(class="prof-name")= user.fullName
             div(class='buttons')
-                button(class="shelf-btn" id="current") Currently Playing
-                button(class="shelf-btn" id="played") Have Played
-                button(class="shelf-btn" id="want") Want to Play
+                button(class="shelf-btn" id="current" onclick=`window.location='/profile/${user.id}/currently_playing'`) Currently Playing
+                button(class="shelf-btn" id="played" onclick=`window.location='/profile/${user.id}/have_played'`) Have Played
+                button(class="shelf-btn" id="want" onclick=`window.location='/profile/${user.id}/want_play'`) Want to Play
         //- div(class="playing-shelf")
         //-     each game in userGames
         //-         if game.status = 'currently_playing'

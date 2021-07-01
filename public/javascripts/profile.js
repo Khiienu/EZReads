@@ -4,6 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let wantBtn = document.getElementById('want');
 
     currBtn.addEventListener('click', (e) => {
-        location.assign('')
+        location.assign(`/profile/${user.id}/currently_playing`)
     })
 })
