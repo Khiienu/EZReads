@@ -77,13 +77,9 @@ router.post( //add game to game shelf for logged in user: this POST is activated
   })
 );
 
-const logoutProfile = (req, res) => {
-  delete req.session.auth;
-};
-
-router.post("/logout", (req, res) => {
-  logoutProfile(req, res);
-  res.redirect("/")
+router.delete("/logout", (req, res) => {
+  delete req.session.auth
+  res.redirect("/profile/logout")
 })
 
 module.exports = router;
