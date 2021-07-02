@@ -139,7 +139,7 @@ textarea {
   padding: 10px;
 }
 
-#userHeader{
+#userHeader {
   width: 50%;
   border-radius: 5px;
   box-sizing: border-box;
@@ -173,8 +173,27 @@ textarea {
   /* background-color: #ffffd8; */
   /* color: black; */
 }
-#writeRev{
+#writeRev {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+#deleteBtn {
+  position: relative;
+  left: 45%;
+  bottom: 5px;
+  display: block;
+  background-color: rgb(208, 18, 18);
+
+  color: #fff;
+
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+#deleteRev {
+  display: flex;
+  justify-content: center;
 }
