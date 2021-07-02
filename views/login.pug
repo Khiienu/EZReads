@@ -8,18 +8,18 @@ block content
     div(class="wrapper")
         div(class="background")
         div(class="form-container")
-            +validationErrorSummary(errors)
             div(class="class-wrapper")
                 div(class="form-back")
                     div(class="form-form")
+                        +validationErrorSummary(errors)
                         p.form-title Welcome back, Gamer
                         form(action='/login' id="form-writes" method='post')
                             input(type='hidden' name='_csrf' value=csrfToken)
                             label(for="email") Email Address 
-                            input(type="text" name='email' id="email") 
+                            input(type="text" id="email") 
                             p
                             label(for="password") Password 
-                            input(type="password" name='hashedPassword' id="password")
+                            input(type="password" id="password")
                             p
                             button(type='submit' class='btn btn-primary') Login
                             p
