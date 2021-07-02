@@ -30,13 +30,13 @@ block content
       div(id='loggedInOptions')
         div(id="addShelf" class='shelfAndRev')
          label(for='shelfForm') Add to shelf
-          form(action=`/profile/${currentUser}` method="post"  id="shelfForm" )
+          form(action=`/profile/${currentUser}` name=currentUser method="post"  id="shelfForm" )
             div
-              select(name='status' style='height:30px; width:75%')
+              select(name='status' id='status' style='height:30px; width:75%')
                   option(value='want_play' ) Want to play 
                   option(value='have_played' ) Have Played
                   option(value='currently_playing' ) Playing
-              input(type='hidden' value=game.id  name='gameId')
+              input(type='hidden' value=game.id  id='gameId')
               button(type='submit' style='width:25%; height:30px;') Add
         div(id="writeRev" class='shelfAndRev')
          label(for="reviewForm") Write a review: 
@@ -60,5 +60,5 @@ block content
             if review.usersId === currentUser
              form(action=`/games/delete/${game.id}` method="post" id='deleteRev')
                input(type='hidden' value=review.id name='reviewId')
-               button(type='submit') Delete
+               button(type='submit' id='deleteBtn') Delete
     script(src='/javascripts/index.js')
