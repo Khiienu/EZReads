@@ -10,41 +10,46 @@ block content
     div(class="title")
         h1= game.gameTitle
     div(class="pic")
-        img(src=`../images/${game.picture}`)
+        img(src=`../images/${game.picture}` onerror=`this.src="../images/noimage.png"`)
     div(id='genreAndDescript')
      div(id='genreAndPlatform')
       div(class="genre" style='color:red; font-weight: bold;')
           p= `Genre: ${game.primaryGenre}`
       div(class='system' style='color:green; font-weight: bold;')
-        p= `System: ${game.Systems[0].system}`
+        if(game.Systems[0])
+          p= `System: ${game.Systems[0].system}`
+        else 
+          p= `System: Unknown`
       div(class='avgScore' style='color:rgb(53, 93, 240); font-weight: bold;')
         p= `Average User Score: ${averageScore}/10 `
      div(class="description")
           p= game.description
       
     if currentUser
+      h1(id='userHeader') User Options
       div(id='loggedInOptions')
         div(id="addShelf" class='shelfAndRev')
          label(for='shelfForm') Add to shelf
           form(action=`/profile/${currentUser}` method="post"  id="shelfForm" )
             div
-              select(name='status' style='height:40px; width:100%')
+              select(name='status' style='height:30px; width:75%')
                   option(value='want_play' ) Want to play 
                   option(value='have_played' ) Have Played
                   option(value='currently_playing' ) Playing
               input(type='hidden' value=game.id  name='gameId')
-              button(type='submit' style='float:right') Add
+              button(type='submit' style='width:25%; height:30px;') Add
         div(id="writeRev" class='shelfAndRev')
          label(for="reviewForm") Write a review: 
           form(action=`/games/${game.id}` method="post"  id="reviewForm" )
            div
+             span Rating: 
              input(type="number" id='score' name='score' max='10' min='1' required)
              label(for="score") /10 
-             textarea(id="content" name='content' cols="50" rows="2")
+             textarea(id="content" name='content' style="width:100%")
              button(type='submit' style="width:100%") Post
     if !currentUser
      a(href='/login' id='notLogged') Login or Signup to add to a shelf or write a review
-    h1(id='reviewsHeader') User Reviews
+    h1(id='reviewsHeader') Our Users' Reviews
     div(id="userRevs")
       div(class='review')
        each review in game.Reviews

@@ -15,15 +15,15 @@ router.post(
             
             if (genre && (!system)){
                 games = await Game.findAll({where: {primaryGenre: genre}, order: sequelize.random()});
-                searchTitle = `Looking at ${genre} games`
+                searchTitle = `Displaying all ${genre} games`
             }
             else if (system && (!genre)) {
                 games = await Game.findAll({include: [{model: System, where: { system: system }}], order: sequelize.random()});
-                searchTitle = `Looking at games for ${system}`
+                searchTitle = `Displaying all games for ${system}`
             }
             else{
                 games = await Game.findAll({where: {primaryGenre: genre}, include: [{model: System, where: { system: system }}], order: sequelize.random()});
-                searchTitle = `Looking at ${genre} games for ${system}`
+                searchTitle = `Displaying all ${genre} games for ${system}`
             }
             
             if (games){
