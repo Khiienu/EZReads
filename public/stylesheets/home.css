@@ -3,6 +3,7 @@ body {
 
 }
 
+
 .game-wrapper {
     display: flex;
     justify-content: center;
@@ -23,6 +24,8 @@ body {
     justify-content: center;
     border-bottom: 2px solid black;
     border-right: 1px solid black;
+    font-size: 40px; /*this just makes the alt text for broken images marginally nicer*/
+    text-align: center;
 }
 
 .game-card:hover {
@@ -48,4 +51,39 @@ body {
   height: 25vh;
   padding: 1em;
   border-bottom: 5px solid #00B7FF; 
+}
+.titleWrapper{
+    display: flex;
+    justify-content: center;
+    border-radius: 5%;
+}
+
+.search-title{
+    background: linear-gradient(0deg,rgb(0, 92, 0, 1) 0%  ,rgba(21,121,122,1) 100%);
+    display: flex;
+    justify-content: center;
+    border-radius: 5%;
+    padding: 10px;
+    min-width: 600px;
+    font-family: "Verdana", sans-serif;
+    font-weight: bold;
+    text-shadow: white 1px 1px;
+    color:purple
+}
+
+.gachaBTNWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gachaBTN {
+    font-family: "Verdana", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: purple;
 }

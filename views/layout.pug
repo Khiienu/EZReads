@@ -3,7 +3,7 @@ html
   head
       block head
         title="EZReads"
-        link(rel='stylesheet' href='/stylesheets/layout.css')
+        link(rel='stylesheet' href='/stylesheets/search.css')
   body
     div(id='navbar-main')
       div(id='navbar-left')
@@ -11,7 +11,7 @@ html
         a(id='home_button' class='navbar_item' href='/') Home
         a(id='profile_button' class='navbar_item' href='/profile') Profile
       div(class='navbar_center')
-        form(action='/search' method="post" class='search_options navbar_item' id="form-writes" )
+        form(action='/search' method="post" class='search_options navbar_item')
           span Search:  
           select(name='system') System
               option(value='') --System--

@@ -7,10 +7,16 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  img(id='title_img' src="/images/EZReads_Logo.png" class="center")
+  if searchTitle
+    div(class="titleWrapper")
+      h1(class='search-title' )= searchTitle
+      
+  else
+    img(id='title_img' src="/images/EZReads_Logo.png" class="center")
   div(class="game-wrapper")
     each game in games
       a(href=`/games/${game.id}`)
           div(class="game-card")
-              img(src=`images/${game.picture}` class="cover")
-
+              img(src=`images/${game.picture}` class="cover" onerror=`this.alt="${game.gameTitle}"`)
+  div(class="gachaBTNWrapper")              
+    button(class="gachaBTN" onclick="window.location.reload();") Gacha?
