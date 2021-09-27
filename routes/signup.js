@@ -3,6 +3,7 @@ var router = express.Router();
 const { csrfProtection, asyncHandler } = require("./utils");
 const { check, validationResult } = require("express-validator");
 const db = require("../db/models");
+const { User } = db;
 const bcrypt = require("bcryptjs");
 
 
@@ -50,7 +51,13 @@ router.post(
 
         if (validatorErrors.isEmpty()) {
             await user.save();
-            res.redirect("/login");
+            const newUser = await User.findOne({ where: { email: email }});
+            req.session.auth = {
+                email: newUser.email,
+                id: newUser.id
+            };
+
+            res.redirect(`/profile/${newUser.id}`);
         } else {
             const errors = validatorErrors.array().map((error) => error.msg);
             res.render("signup", { user, errors, csrfToken: req.csrfToken() });
