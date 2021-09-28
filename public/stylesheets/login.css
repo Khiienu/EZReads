@@ -7,7 +7,7 @@
     }
 }
 .class-wrapper{
-    height: 98%;
+    height: 50%;
     width: 98%;
     overflow: hidden;
     position: relative;
@@ -70,13 +70,19 @@
 
 .form-title {
 	text-shadow: 3px 4px 2px #a74b4b6b;
-	font-size: xxx-large;
+	font-size: 30px;
 	text-align: center;
 	opacity: 0.7;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    margin-bottom: 10px;
 }
 
 .wrapper{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -84,7 +90,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .alert{
     display: flex;
     justify-self: center;
@@ -100,6 +105,11 @@
     border-radius: 5%;
     margin-bottom: 5px;
 }
+
+.btn-primary {
+    background-color: linear-gradient(to left, #FFFFD8, #333 50%, #eee 75%, #333 75%);
+}
+
 .form-group{
     margin: 20px;
 }
