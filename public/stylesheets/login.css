@@ -107,7 +107,23 @@
 }
 
 .btn-primary {
-    background-color: linear-gradient(to left, #FFFFD8, #333 50%, #eee 75%, #333 75%);
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 8px;
+    width: 20%;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: magenta;
+    box-shadow: 2px 2px 3px black;
+}
+
+.btn-primary:active {
+    background-color: darkorchid;
+    box-shadow: -2px -2px 3px black;
 }
 
 .form-group{
@@ -115,4 +131,18 @@
 }
 .form-group label{
     margin: 20px;
+}
+
+.log-link {
+    text-decoration: none;
+    margin: 5px;
+    font-size: 17px;
+}
+
+.log-link:hover {
+    color: magenta;
+}
+
+.log-link:active {
+    color: darkorchid;
 }

@@ -1,5 +1,5 @@
 extends layout.pug
-append head 
+append head
     title Login
     link(rel="stylesheet", href="/stylesheets/login.css")
 include utils.pug
@@ -12,20 +12,16 @@ block content
             div(class="class-wrapper")
                 div(class="form-back")
                     div(class="form-form")
-                        p.form-title Ready to play ? 
+                        p.form-title Ready to play ?
                         form(action='/signup' id="form-writes" method="post")
                             input(type='hidden' name='_csrf' value=csrfToken)
                             label(for="fullName") Full Name
                             input(type="text" name='fullName' id="fullName")
-                            p
                             label(for="email") Email
                             input(type="text" name='email' id="email")
-                            p
                             label(for="password") Password
                             input(type="password" name='hashedPassword' id="hashedPassword")
-                            p
-                            label(for="confirmPassword") Confirm Password 
+                            label(for="confirmPassword") Confirm Password
                             input(type="password" name='confirmPassword' id="confirmPassword")
-                            p
                             button(type='submit' class='btn btn-primary') Register
-                            p: a(href='/login') Already have an account?
+                            p: a(class='log-link' href='/login') Already have an account?
