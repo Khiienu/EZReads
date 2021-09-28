@@ -70,7 +70,7 @@ h1 {
   font-weight: bold;
   text-decoration: none;
   color: white;
-  
+
 }
 
 .search_options{
@@ -96,4 +96,9 @@ h1 {
 .search_option {
   display: flex;
   flex-direction: row;
+}
+
+.navbar-right {
+    display: flex;
+    flex-direction: row;
 }

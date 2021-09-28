@@ -9,10 +9,10 @@ html
       div(id='navbar-left')
         img(id='logo' src="/images/EZReads_nav_logo.png")
         a(id='home_button' class='navbar_item' href='/') Home
-        a(id='profile_button' class='navbar_item' href='/profile') Profile
+
       div(class='navbar_center')
         form(action='/search' method="post" class='search_options navbar_item')
-          span Search:  
+          span Search:
           select(name='system') System
               option(value='') --System--
               option(value="PC") PC
@@ -72,8 +72,9 @@ html
             option(value="Sports") Sports
             option(value="Other") Other
           button(id='search_button' type='submit') Go
-      div(id='navbar-right')
+      div(class="navbar-right")
         if locals.authenticated
+          a(id='profile_button' class='navbar_item' href='/profile') Profile
           form(action="/profile/logout" method="post")
             button(id="logout-button" class="navbar_item" value="logout" type="submit") logout
         else

@@ -47,22 +47,22 @@ body {
   width: 25vw;
   height: 25vh;
   padding: 1em;
-  border-bottom: 5px solid #00B7FF; 
+  border-bottom: 5px solid #00B7FF;
 }
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: #23272a;
   }
-  
+
   a {
     color: #00B7FF;
   }
-  
+
   * {
     box-sizing: border-box;
   }
-  
+
   h1, h2, h3, h4, h5, h6, a, ol, li, ul, div, span,
   body, header, nav {
     font-size: 1rem;
@@ -73,11 +73,11 @@ body {
     outline: 0;
     font-weight: normal;
   }
-  
+
   h1 {
     font-size: 2rem;
   }
-  
+
   #navbar-main{
     display:flex;
     justify-content: space-between;
@@ -88,12 +88,12 @@ body {
     background: rgb(21,121,122);
     background: linear-gradient(0deg, rgba(21,121,122,1) 0%, rgba(29,53,212,1) 100%);
   }
-  
+
   #navbar-left{
     display: flex;
     align-items: center;
   }
-  
+
   #logo{
     margin-right: 20px;
     max-width: 100px;
@@ -103,7 +103,7 @@ body {
     width: auto;
     padding-top: 5px; */
   }
-  
+
   .navbar_item:not(.search_options){
     font-family: "Verdana", sans-serif;
     font-weight: bold;
@@ -121,9 +121,9 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: white;
-    
+
   }
-  
+
   .search_options{
     font-family: "Verdana", sans-serif;
     font-weight: bold;
@@ -135,11 +135,11 @@ body {
     background-color: purple;
     /* box-shadow: 5px 1px 1px black; */
   }
-  
+
   #search_button{
     margin-left: 5px;
   }
-  
+
   .navbar_center {
     display: inline-block;
     min-width: 400px;
@@ -148,4 +148,7 @@ body {
     display: flex;
     flex-direction: row;
   }
-  
+
+  .navbar-right {
+      display: flex;
+  }
